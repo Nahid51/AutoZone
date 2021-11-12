@@ -1,6 +1,36 @@
+.font1{
+  font-family: 'Poppins', sans-serif;
+}
 .App {
   text-align: center;
 }
+
+.cardHover:hover{
+  box-shadow: 2px 5px 7px 1px #888888;
+  transition: 0.5s;
+}
+.color1{
+  color: "#20262F";
+}
+
+.btn-grad {background-image: linear-gradient(to right, #D31027 0%, #EA384D  51%, #D31027  100%)}
+.btn-grad {
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
 
 .App-logo {
   height: 40vmin;

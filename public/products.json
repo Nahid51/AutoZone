@@ -1,0 +1,42 @@
+[
+    {
+        "img": "https://i.ibb.co/Y7qDtzK/Rolls-Royce-Dawn-2021.jpg",
+        "name": "Rolls-Royce-Dawn-2021",
+        "bodyType": "Convertible",
+        "maximumSpeed": "250km/h",
+        "milage": "Average 15 MPG",
+        "fuelCapacity": "21.7 gal",
+        "price": "356,500",
+        "about": "Rolls Royce Dawn comes superbly appointed by Standard features include voice activated navigation paired with the 10.25-inch touchscreen display, satellite radio, an 18 speaker 600-watt sound system and 4 zone automatic climate control."
+    },
+    {
+        "img": "https://i.ibb.co/NnyPkVs/Rolls-Royce-Ghost-2021.jpg",
+        "name": "Rolls-Royce-Ghost-2021",
+        "bodyType": "Sedan",
+        "maximumSpeed": "250km/h",
+        "milage": "Average 17 MPG",
+        "fuelCapacity": "21.7 gal",
+        "price": "321,900",
+        "about": "The Ghost follows Rolls-Royce styling tradition on the outside, for the most part, with a long hood, short front overhang and an upright windshield. The modern Ghost has just a little more modern panache, especially on the inside. The hood, grille and windshield surround can be done in a polished satin finish if desired."
+    },
+    {
+        "img": "https://i.ibb.co/dkmGyy5/Rolls-Royce-Phantom-2022.jpg",
+        "name": "Rolls-Royce-Phantom-2021",
+        "bodyType": "Sedan",
+        "maximumSpeed": "250km/h",
+        "milage": "Average 18 MPG",
+        "fuelCapacity": "21.7 gal",
+        "price": "455,000",
+        "about": "Standard features of the Phantom include four-zone automatic climate control, soft-closing doors, a 360-degree camera, power adjustable and heated front seats with massage and a power trunk lid. Standard convenience features are front and rear parking sensors, forward collision warning, lane departure warning, a head-up display, high-beam assistance, and cruise control."
+    },
+    {
+        "img": "https://i.ibb.co/Y7qDtzK/Rolls-Royce-Dawn-2021.jpg",
+        "name": "Rolls-Royce-Dawn-2021",
+        "bodyType": "Convertible",
+        "maximumSpeed": "250km/h",
+        "milage": "Average 15 MPG",
+        "fuelCapacity": "21.7 gal",
+        "price": "356,500",
+        "about": "Rolls Royce Dawn comes superbly appointed by Standard features include voice activated navigation paired with the 10.25-inch touchscreen display, satellite radio, an 18 speaker 600-watt sound system and 4 zone automatic climate control."
+    }
+]
