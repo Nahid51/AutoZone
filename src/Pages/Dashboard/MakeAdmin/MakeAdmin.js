@@ -13,7 +13,7 @@ const MakeAdmin = () => {
     const handleCreateAdmin = e => {
         e.preventDefault();
         const user = { email };
-        fetch('http://localhost:5000/customers/admin', {
+        fetch('https://aqueous-garden-63988.herokuapp.com/customers/admin', {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(user)

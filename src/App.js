@@ -16,6 +16,7 @@ import Register from './Pages/Login/Register/Register';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Redirects/PrivateRoute';
 import AllOrder from './Pages/Dashboard/AllOrder/AllOrder';
+import UpdateProduct from './Pages/UpdateProduct/UpdateProduct';
 
 function App() {
   return (
@@ -47,9 +48,12 @@ function App() {
             <PrivateRoute path="/orders/:id">
               <Orders></Orders>
             </PrivateRoute>
-            <Route path="/products">
+            <Route exact path="/products">
               <AllProducts></AllProducts>
             </Route>
+            <PrivateRoute path="/products/:id">
+              <UpdateProduct></UpdateProduct>
+            </PrivateRoute>
             <Route path="/home">
               <Home></Home>
             </Route>

@@ -21,7 +21,7 @@ const Orders = () => {
 
     // loaded data from database
     useEffect(() => {
-        fetch('http://localhost:5000/allProducts')
+        fetch('https://aqueous-garden-63988.herokuapp.com/allProducts')
             .then(res => res.json())
             .then(data => setProductDetails(data))
     }, [])
@@ -50,7 +50,7 @@ const Orders = () => {
         }
         console.log(orderDetails);
         // sent data to the server
-        fetch('http://localhost:5000/orders', {
+        fetch('https://aqueous-garden-63988.herokuapp.com/orders', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(orderDetails)

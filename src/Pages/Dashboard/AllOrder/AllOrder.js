@@ -36,18 +36,21 @@ const AllOrder = () => {
     const [deleteItem, setDeleteItem] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allorders?email=${user.email}`)
+        fetch(`https://aqueous-garden-63988.herokuapp.com/allorders?email=${user.email}`)
             .then(res => res.json())
             .then(data => setAllOrders(data))
     }, [user.email, deleteItem]);
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/allorders/${id}`, {
-            method: 'DELETE',
-            headers: { 'content-type': 'application/json' },
-        })
-            .then(res => res.json())
-            .then(data => setDeleteItem(data))
+        const proceed = window.confirm('Are you sure to delete this file?')
+        if (proceed) {
+            fetch(`https://aqueous-garden-63988.herokuapp.com/allorders/${id}`, {
+                method: 'DELETE',
+                headers: { 'content-type': 'application/json' },
+            })
+                .then(res => res.json())
+                .then(data => setDeleteItem(data))
+        }
     }
 
     return (

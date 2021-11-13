@@ -83,7 +83,7 @@ const useFirebase = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/customers/${user?.email}`)
+        fetch(`https://aqueous-garden-63988.herokuapp.com/customers/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin);
@@ -92,7 +92,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const customer = { email, displayName };
-        fetch('http://localhost:5000/customers', {
+        fetch('https://aqueous-garden-63988.herokuapp.com/customers', {
             method: method,
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(customer)

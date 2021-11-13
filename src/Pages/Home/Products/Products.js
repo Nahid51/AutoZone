@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://aqueous-garden-63988.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);

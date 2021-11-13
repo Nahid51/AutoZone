@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Review from './Review/Review';
 import reviewLogo from '../../../Images/Group 1368.png'
@@ -6,7 +6,7 @@ import reviewLogo from '../../../Images/Group 1368.png'
 const Reviews = () => {
     const [reviewCollection, setReviewCollection] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://aqueous-garden-63988.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviewCollection(data))
     }, [])

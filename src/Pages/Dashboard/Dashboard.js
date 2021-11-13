@@ -23,6 +23,7 @@ import logo from '../../Images/logo.png'
 import AddProducts from '../AllProducts/AddProducts/AddProducts';
 import AdminRoute from '../Login/Login/AdminRoute/AdminRoute';
 import AddReviews from '../Home/Reviews/AddReviews.js/AddReviews';
+import ManageProduct from './ManageProduct/ManageProduct';
 
 const drawerWidth = 200;
 
@@ -67,9 +68,9 @@ function Dashboard(props) {
                     <NavLink style={{ textDecoration: 'none' }} to={`${url}/addProducts`}>
                         <Button sx={{ textTransform: 'capitalize' }}>Add a Product</Button>
                     </NavLink> <Divider />
-                    {/* <NavLink style={{ textDecoration: 'none' }} to={`${url}/manageProduct`}>
-                <Button sx={{ textTransform: 'capitalize' }}>Manage Product</Button>
-            </NavLink> <Divider /> */}
+                    <NavLink style={{ textDecoration: 'none' }} to={`${url}/manageProduct`}>
+                        <Button sx={{ textTransform: 'capitalize' }}>Manage Product</Button>
+                    </NavLink> <Divider />
                     <NavLink style={{ textDecoration: 'none' }} to={`${url}/makeAdmin`}>
                         <Button sx={{ textTransform: 'capitalize' }}>Make Admin</Button>
                     </NavLink>
@@ -159,9 +160,9 @@ function Dashboard(props) {
                     <AdminRoute path={`${path}/addProducts`}>
                         <AddProducts></AddProducts>
                     </AdminRoute>
-                    {/* <Route path={`${path}/manageProduct`}>
-                        <AllProducts></AllProducts>
-                    </Route> */}
+                    <AdminRoute path={`${path}/manageProduct`}>
+                        <ManageProduct></ManageProduct>
+                    </AdminRoute>
                     <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>

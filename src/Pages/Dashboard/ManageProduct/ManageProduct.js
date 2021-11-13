@@ -1,10 +1,9 @@
+import { Grid } from '@mui/material';
+import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
-import Navigation from '../Home/Navigation/Navigation';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import AllProduct from './AllProduct/AllProduct';
+import ShowProduct from './ShowProduct/ShowProduct';
 
-const AllProducts = () => {
+const ManageProduct = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         fetch('https://aqueous-garden-63988.herokuapp.com/allProducts')
@@ -13,15 +12,14 @@ const AllProducts = () => {
     }, [])
     return (
         <div>
-            <Navigation />
             <h2>Total Products: {products.length}</h2>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                     {products.map((product) => (
                         <Grid item xs={4} sm={4} md={3} key={product._id}>
-                            <AllProduct
+                            <ShowProduct
                                 product={product}
-                            ></AllProduct>
+                            ></ShowProduct>
                         </Grid>
                     ))}
                 </Grid>
@@ -30,4 +28,4 @@ const AllProducts = () => {
     );
 };
 
-export default AllProducts;
+export default ManageProduct;
