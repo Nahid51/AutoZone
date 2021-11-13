@@ -22,6 +22,7 @@ import MakeAdmin from './MakeAdmin/MakeAdmin';
 import logo from '../../Images/logo.png'
 import AddProducts from '../AllProducts/AddProducts/AddProducts';
 import AdminRoute from '../Login/Login/AdminRoute/AdminRoute';
+import AddReviews from '../Home/Reviews/AddReviews.js/AddReviews';
 
 const drawerWidth = 200;
 
@@ -55,6 +56,12 @@ function Dashboard(props) {
             <NavLink style={{ textDecoration: 'none' }} to={`${url}`}>
                 <Button sx={{ textTransform: 'capitalize' }}>Manage All Orders</Button>
             </NavLink> <Divider />
+
+            {!admin &&
+                <NavLink style={{ textDecoration: 'none' }} to={`${url}/reviews`}>
+                    <Button sx={{ textTransform: 'capitalize' }}>Reviews</Button>
+                </NavLink>}
+            <Divider />
             {admin &&
                 <Box>
                     <NavLink style={{ textDecoration: 'none' }} to={`${url}/addProducts`}>
@@ -145,6 +152,9 @@ function Dashboard(props) {
                 <Switch>
                     <Route exact path={path}>
                         <AllOrder></AllOrder>
+                    </Route>
+                    <Route path={`${path}/reviews`}>
+                        <AddReviews></AddReviews>
                     </Route>
                     <AdminRoute path={`${path}/addProducts`}>
                         <AddProducts></AddProducts>

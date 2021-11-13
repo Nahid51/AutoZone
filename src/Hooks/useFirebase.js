@@ -86,8 +86,7 @@ const useFirebase = () => {
         fetch(`http://localhost:5000/customers/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                setAdmin(data.admin)
+                setAdmin(data.admin);
             })
     }, [user?.email]);
 
