@@ -3,6 +3,7 @@ import Navigation from '../Home/Navigation/Navigation';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import AllProduct from './AllProduct/AllProduct';
+import Footer from '../Home/Footer/Footer';
 
 const AllProducts = () => {
     const [products, setProducts] = useState([]);
@@ -26,6 +27,7 @@ const AllProducts = () => {
                     ))}
                 </Grid>
             </Box>
+            <Footer />
         </div>
     );
 };
