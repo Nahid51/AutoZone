@@ -1,10 +1,12 @@
-import { Alert, Button, TextField, Typography } from '@mui/material';
+import { Alert, Button, CircularProgress, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import useAuth from '../../Hooks/useAuth';
 import Navigation from '../Home/Navigation/Navigation';
 
 const UpdateProduct = () => {
+    const { isLoading } = useAuth();
     const { id } = useParams();
     const [product, setProduct] = useState({});
     const [success, setSuccess] = useState(false);
@@ -54,40 +56,42 @@ const UpdateProduct = () => {
             <Navigation />
             <Typography sx={{ fontSize: 36 }}>Update Product</Typography>
             {success && <Alert severity="success">Registered Successfully!</Alert>}
-            <Box sx={{ border: '2px solid gray', width: '75%', mx: 'auto', borderRadius: 1, m: 3, p: 3 }}>
-                <TextField
-                    sx={{ width: '80%' }}
-                    onChange={handleUpdateName}
-                    type="text"
-                    name="name"
-                    value={product?.name || ''}
-                    variant="standard" /> <br />
-                <TextField
-                    sx={{ width: '80%' }}
-                    onChange={handleUpdateImg}
-                    type="link"
-                    name="img"
-                    value={product?.img || ''}
-                    variant="standard" /> <br />
-                <TextField
-                    sx={{ width: '80%' }}
-                    onChange={handleUpdatePrice}
-                    type="number"
-                    name="price"
-                    value={product?.price || ''}
-                    variant="standard" /> <br />
-                <TextField
-                    sx={{ width: '80%' }}
-                    onChange={handleUpdateAbout}
-                    type="text"
-                    name="about"
-                    value={product?.about || ''}
-                    multiline
-                    rows={4}
-                    variant="standard"
-                /> <br />
-                <Button onClick={handleButton} variant="contained" sx={{ mt: 3 }}>Update Product</Button>
-            </Box>
+            {isLoading &&
+                <Box sx={{ border: '2px solid gray', width: '75%', mx: 'auto', borderRadius: 1, m: 3, p: 3 }}>
+                    <TextField
+                        sx={{ width: '80%' }}
+                        onChange={handleUpdateName}
+                        type="text"
+                        name="name"
+                        value={product?.name || ''}
+                        variant="standard" /> <br />
+                    <TextField
+                        sx={{ width: '80%' }}
+                        onChange={handleUpdateImg}
+                        type="link"
+                        name="img"
+                        value={product?.img || ''}
+                        variant="standard" /> <br />
+                    <TextField
+                        sx={{ width: '80%' }}
+                        onChange={handleUpdatePrice}
+                        type="number"
+                        name="price"
+                        value={product?.price || ''}
+                        variant="standard" /> <br />
+                    <TextField
+                        sx={{ width: '80%' }}
+                        onChange={handleUpdateAbout}
+                        type="text"
+                        name="about"
+                        value={product?.about || ''}
+                        multiline
+                        rows={4}
+                        variant="standard"
+                    /> <br />
+                    <Button onClick={handleButton} variant="contained" sx={{ mt: 3 }}>Update Product</Button>
+                </Box>}
+            {isLoading && <CircularProgress color="secondary" />}
         </div>
     );
 };
