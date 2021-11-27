@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import Home from './Pages/Home/Home';
 import AllProducts from './Pages/AllProducts/AllProducts';
-import Orders from './Pages/Orders/Orders';
 import Extra from './Pages/Extra/Extra';
 import AddProducts from './Pages/AllProducts/AddProducts/AddProducts';
 import Dashboard from './Pages/Dashboard/Dashboard';
@@ -17,6 +16,7 @@ import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Redirects/PrivateRoute';
 import AllOrder from './Pages/Dashboard/AllOrder/AllOrder';
 import UpdateProduct from './Pages/UpdateProduct/UpdateProduct';
+import MakeOrder from './Pages/MakeOrder/MakeOrder';
 
 function App() {
   return (
@@ -42,11 +42,8 @@ function App() {
             <Route path="/allorders">
               <AllOrder></AllOrder>
             </Route>
-            <Route path="/orders">
-              <Orders></Orders>
-            </Route>
-            <PrivateRoute path="/orders/:id">
-              <Orders></Orders>
+            <PrivateRoute path="/singleorder/:id">
+              <MakeOrder></MakeOrder>
             </PrivateRoute>
             <Route exact path="/products">
               <AllProducts></AllProducts>

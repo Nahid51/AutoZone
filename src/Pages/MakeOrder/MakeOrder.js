@@ -5,7 +5,7 @@ import { useParams } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
 import Navigation from '../Home/Navigation/Navigation';
 
-const Orders = () => {
+const MakeOrder = () => {
     const { id } = useParams();
     const { user } = useAuth();
     const [productDetails, setProductDetails] = useState([]);
@@ -21,7 +21,7 @@ const Orders = () => {
 
     // loaded data from database
     useEffect(() => {
-        fetch('https://aqueous-garden-63988.herokuapp.com/allProducts')
+        fetch('https://rocky-springs-54557.herokuapp.com/allProducts')
             .then(res => res.json())
             .then(data => setProductDetails(data))
     }, [])
@@ -50,7 +50,7 @@ const Orders = () => {
         }
         console.log(orderDetails);
         // sent data to the server
-        fetch('https://aqueous-garden-63988.herokuapp.com/orders', {
+        fetch('https://rocky-springs-54557.herokuapp.com/orders', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(orderDetails)
@@ -86,7 +86,7 @@ const Orders = () => {
                         <h2 className="font2 color2" >Love this car?</h2>
                         <h1 className="fw-bold mb-3">Purchase Now</h1>
                         <Card>
-                            {purchaseSuccess && <Alert severity="success">Purchase Successfully!</Alert>}
+                            {purchaseSuccess && <Alert severity="success">Add to Cart Successfully! Go to Dashboard for Purchase.</Alert>}
                             <Form>
                                 <Form.Group as={Col} className="my-3" controlId="formHorizontalName">
                                     <Col className="mx-auto" sm={10}>
@@ -147,7 +147,7 @@ const Orders = () => {
                                             defaultValue={singleProduct?.price} />
                                     </Col>
                                 </Form.Group>
-                                <Button onClick={handlePurchaseButton} className="btn btn-danger mb-3">Purchase</Button>
+                                <Button onClick={handlePurchaseButton} className="btn btn-danger mb-3">Add to Cart</Button>
                             </Form>
                         </Card>
                     </div>
@@ -157,4 +157,4 @@ const Orders = () => {
     );
 };
 
-export default Orders;
+export default MakeOrder;

@@ -19,7 +19,7 @@ const AddProducts = () => {
     }
     const handleButton = e => {
         e.preventDefault();
-        fetch('https://aqueous-garden-63988.herokuapp.com/addProducts', {
+        fetch('https://rocky-springs-54557.herokuapp.com/addProducts', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(productData)

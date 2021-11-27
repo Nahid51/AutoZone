@@ -6,7 +6,7 @@ import reviewLogo from '../../../Images/Group 1368.png'
 const Reviews = () => {
     const [reviewCollection, setReviewCollection] = useState([]);
     useEffect(() => {
-        fetch('https://aqueous-garden-63988.herokuapp.com/reviews')
+        fetch('https://rocky-springs-54557.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviewCollection(data))
     }, [])

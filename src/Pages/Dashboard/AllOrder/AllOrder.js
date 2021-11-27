@@ -36,7 +36,7 @@ const AllOrder = () => {
     const [deleteItem, setDeleteItem] = useState(false);
 
     useEffect(() => {
-        fetch(`https://aqueous-garden-63988.herokuapp.com/allorders?email=${user.email}`)
+        fetch(`https://rocky-springs-54557.herokuapp.com/allorders?email=${user.email}`)
             .then(res => res.json())
             .then(data => setAllOrders(data))
     }, [user.email, deleteItem]);
@@ -44,7 +44,7 @@ const AllOrder = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to delete this file?')
         if (proceed) {
-            fetch(`https://aqueous-garden-63988.herokuapp.com/allorders/${id}`, {
+            fetch(`https://rocky-springs-54557.herokuapp.com/allorders/${id}`, {
                 method: 'DELETE',
                 headers: { 'content-type': 'application/json' },
             })
@@ -86,11 +86,16 @@ const AllOrder = () => {
                                     <StyledTableCell align="right">{allorder.productName}</StyledTableCell>
                                     <StyledTableCell align="right">&#36;{allorder.productPrice}</StyledTableCell>
                                     <StyledTableCell align="right">{allorder.today}</StyledTableCell>
+
                                     <StyledTableCell align="right">
-                                        <NavLink to="/extra" style={{ textDecoration: "none" }}>
-                                            <Button>Purchase</Button>
-                                        </NavLink>
+                                        {
+                                            allorder.payment ? 'Paid' :
+                                                <NavLink to={`/dashboard/purchaseorder/${allorder._id}`} style={{ textDecoration: "none" }}>
+                                                    <Button>Purchase</Button>
+                                                </NavLink>
+                                        }
                                     </StyledTableCell>
+
                                     <StyledTableCell align="right">
                                         <Button onClick={() => handleDelete(allorder._id)}>Delete</Button>
                                     </StyledTableCell>

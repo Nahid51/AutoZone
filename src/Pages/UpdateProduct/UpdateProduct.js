@@ -11,7 +11,7 @@ const UpdateProduct = () => {
     const [product, setProduct] = useState({});
     const [success, setSuccess] = useState(false);
     useEffect(() => {
-        fetch(`https://aqueous-garden-63988.herokuapp.com/updateProduct/${id}`)
+        fetch(`https://rocky-springs-54557.herokuapp.com/updateProduct/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [id]);
@@ -38,7 +38,7 @@ const UpdateProduct = () => {
     }
     const handleButton = e => {
         e.preventDefault();
-        fetch(`https://aqueous-garden-63988.herokuapp.com/updateProduct/${id}`, {
+        fetch(`https://rocky-springs-54557.herokuapp.com/updateProduct/${id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(product)

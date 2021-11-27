@@ -21,7 +21,7 @@ const AddReviews = ({ product }) => {
         e.preventDefault();
         const reviwerData = { ...reviewsData, name: user?.displayName, email: user?.email };
         console.log(reviewsData);
-        fetch('https://aqueous-garden-63988.herokuapp.com/reviews', {
+        fetch('https://rocky-springs-54557.herokuapp.com/reviews', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(reviwerData)

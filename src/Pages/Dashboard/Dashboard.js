@@ -24,6 +24,7 @@ import AddProducts from '../AllProducts/AddProducts/AddProducts';
 import AdminRoute from '../Login/Login/AdminRoute/AdminRoute';
 import AddReviews from '../Home/Reviews/AddReviews.js/AddReviews';
 import ManageProduct from './ManageProduct/ManageProduct';
+import PurchaseOrder from './PurchaseOrder/PurchaseOrder';
 
 const drawerWidth = 200;
 
@@ -156,6 +157,9 @@ function Dashboard(props) {
                         <Switch>
                             <Route exact path={path}>
                                 <AllOrder></AllOrder>
+                            </Route>
+                            <Route path={`${path}/purchaseorder/:purchaseId`}>
+                                <PurchaseOrder></PurchaseOrder>
                             </Route>
                             <Route path={`${path}/reviews`}>
                                 <AddReviews></AddReviews>

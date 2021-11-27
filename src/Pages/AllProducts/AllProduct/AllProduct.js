@@ -32,7 +32,7 @@ const AllProduct = ({ product }) => {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <NavLink to={`/orders/${_id}`} style={{ textDecoration: 'none' }}>
+                    <NavLink to={`/singleorder/${_id}`} style={{ textDecoration: 'none' }}>
                         <Button variant="contained" sx={{ bgcolor: '#43495d', color: 'white' }}>Purchase</Button>
                     </NavLink>
                 </CardActions>

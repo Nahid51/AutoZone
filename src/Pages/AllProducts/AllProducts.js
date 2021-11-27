@@ -8,7 +8,7 @@ import Footer from '../Home/Footer/Footer';
 const AllProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('https://aqueous-garden-63988.herokuapp.com/allProducts')
+        fetch('https://rocky-springs-54557.herokuapp.com/allProducts')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

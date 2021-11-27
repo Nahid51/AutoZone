@@ -15,7 +15,7 @@ const ShowProduct = ({ product }) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to delete this file?')
         if (proceed) {
-            fetch(`https://aqueous-garden-63988.herokuapp.com/deleteProduct/${id}`, {
+            fetch(`https://rocky-springs-54557.herokuapp.com/deleteProduct/${id}`, {
                 method: 'DELETE',
                 headers: { 'content-type': 'application/json' }
             })
